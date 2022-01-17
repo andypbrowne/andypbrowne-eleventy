@@ -22,10 +22,14 @@ export default {
       }
     },
     {
-      name: 'publishedAt',
-      type: 'datetime',
-      title: 'Published at',
-      description: 'This can be used to schedule post for publishing'
+      name: 'publishedDate',
+      type: 'date',
+      title: 'Published Date',
+      description: 'This can be used to schedule post for publishing',
+      options: {
+        dateFormat: 'YYY-MM-DD',
+        calendarTodayLabel: 'today'
+      }
     },
     {
       name: 'mainImage',
@@ -39,16 +43,16 @@ export default {
       description:
         'This ends up on summary pages, on Google, when people share your post in social media.'
     },
-    {
-      name: 'authors',
-      title: 'Authors',
-      type: 'array',
-      of: [
-        {
-          type: 'authorReference'
-        }
-      ]
-    },
+    // {
+    //   name: 'authors',
+    //   title: 'Authors',
+    //   type: 'array',
+    //   of: [
+    //     {
+    //       type: 'authorReference'
+    //     }
+    //   ]
+    // },
     {
       name: 'categories',
       type: 'array',
