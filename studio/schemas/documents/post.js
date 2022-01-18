@@ -78,7 +78,7 @@ export default {
       title: 'Publishing date new–>old',
       by: [
         {
-          field: 'publishedAt',
+          field: 'publishedDate',
           direction: 'asc'
         },
         {
@@ -92,7 +92,7 @@ export default {
       title: 'Publishing date old->new',
       by: [
         {
-          field: 'publishedAt',
+          field: 'publishedDate',
           direction: 'desc'
         },
         {
@@ -105,17 +105,17 @@ export default {
   preview: {
     select: {
       title: 'title',
-      publishedAt: 'publishedAt',
+      publishedDate: 'publishedDate',
       slug: 'slug',
       media: 'mainImage'
     },
-    prepare ({title = 'No title', publishedAt, slug = {}, media}) {
-      const dateSegment = format(publishedAt, 'YYYY/MM')
+    prepare ({title = 'No title', publishedDate, slug = {}, media}) {
+      const dateSegment = format(publishedDate, 'YYYY/MM')
       const path = `/${dateSegment}/${slug.current}/`
       return {
         title,
         media,
-        subtitle: publishedAt ? path : 'Missing publishing date'
+        subtitle: publishedDate ? path : 'Missing publishing date'
       }
     }
   }
