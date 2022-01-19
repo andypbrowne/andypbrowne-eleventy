@@ -14,10 +14,10 @@ function generatePost (post) {
 
 async function getPosts () {
   // Learn more: https://www.sanity.io/docs/data-store/how-queries-work
-  const filter = groq`*[_type == "post" && defined(slug) && publishedAt < now()]`
+  const filter = groq`*[_type == "post" && defined(slug) && publishedDate < now()]`
   const projection = groq`{
     _id,
-    publishedAt,
+    publishedDate,
     title,
     slug,
     body[]{
