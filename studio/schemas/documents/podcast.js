@@ -36,7 +36,7 @@ export default {
         },
         {
             name: 'description',
-            type: 'excerptPortableText',
+            type: 'bodyPortableText',
             title: 'Description',
             description: 'What is this podcast about and why should someone listen',
             group: 'details'
@@ -52,7 +52,7 @@ export default {
         {
             name: 'podcastEpisodes',
             type: 'array',
-            title: 'Favorite episodes',
+            title: 'Favorite episode(s)',
             group: 'details',
             of: [
                 {
