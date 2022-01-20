@@ -24,7 +24,7 @@ export default {
         {
             name: 'image',
             type: 'mainImage',
-            title: 'mainImage',
+            title: 'Image',
             group: 'main'
         },
         {
@@ -64,14 +64,15 @@ export default {
         }
     ],
     preview: {
-        title: 'name',
-        slug: 'slug',
+      select: {
+        title: 'title',
         media: 'image',
-    }, 
-    prepare({title = 'No title', media}) {
+      }, 
+      prepare({title = 'No title', media}) {
         return {
-            title,
-            media
+          title,
+          media
         }
+      }
     }
 }
