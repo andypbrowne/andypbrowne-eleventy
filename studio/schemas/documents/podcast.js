@@ -67,11 +67,14 @@ export default {
       select: {
         title: 'title',
         media: 'image',
+        category: 'podcastCategory.name'
       }, 
-      prepare({title = 'No title', media}) {
+      prepare(selection) {
+        const {title, media, category} = selection
         return {
           title,
-          media
+          media,
+          subtitle: `Category: ${category ? Category : 'unknown'}`
         }
       }
     }
