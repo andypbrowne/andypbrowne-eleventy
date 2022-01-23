@@ -24,6 +24,18 @@ export default {
             group: 'main'
         },
         {
+            name: 'subTitle',
+            type: 'string',
+            title: 'Subtitle',
+            group: 'main'
+        },
+        {
+            name: 'bookAuthor',
+            type: 'string',
+            title: 'Author',
+            group: 'main'
+        },
+        {
             name: 'slug',
             type: 'slug',
             title: 'Slug',
