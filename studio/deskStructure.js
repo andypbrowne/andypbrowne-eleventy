@@ -1,10 +1,9 @@
 import S from '@sanity/desk-tool/structure-builder'
 import { MdSettings } from "react-icons/md";
 import { AiOutlineAudio } from "react-icons/ai";
-import { FiFeather} from "react-icons/fi";
 
 const hiddenDocTypes = listItem =>
-  !['category', 'author', 'post', 'podcast', 'podcastCatetory', 'siteSettings'].includes(listItem.getId())
+  !['category', 'author', 'post', 'book', 'podcast', 'podcastCatetory', 'siteSettings'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -12,9 +11,12 @@ export default () =>
     .items([
       S.listItem()
         .title('Posts')
-        .icon('FiFeather')
         .schemaType('post')
         .child(S.documentTypeList('post').title('Posts')),
+      S.listItem()
+        .title('Books')
+        .schemaType('book')
+        .child(S.documentTypeList('book').title('Books')),
       S.listItem()
         .title('Podcasts')
         .icon(AiOutlineAudio)
