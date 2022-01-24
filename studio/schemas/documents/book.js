@@ -108,7 +108,7 @@ export default {
       select: {
           title: 'title',
           media: 'image',
-          category: 'categories.category.title',
+          category: 'categories.0.title',
       },
       prepare(selection) {
         const {title, media, category} = selection
