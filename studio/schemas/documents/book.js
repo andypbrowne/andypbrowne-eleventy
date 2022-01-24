@@ -52,11 +52,16 @@ export default {
             group: 'main'
         },
         {
-            name: 'category',
-            type: 'reference',
-            title: 'Category',
+            name: 'categories',
+            type: 'array',
+            title: 'Categories',
             group: 'details',
-            to: [{type: 'bookCategory'}]
+            of: [
+                {
+                    type: 'reference',
+                    to: [{type: 'bookCategory'}]
+                }
+            ]
         },
         {
             name: 'whenRead',
@@ -103,7 +108,7 @@ export default {
       select: {
           title: 'title',
           media: 'image',
-          category: 'category.title',
+          category: 'categories.category.title',
       },
       prepare(selection) {
         const {title, media, category} = selection
