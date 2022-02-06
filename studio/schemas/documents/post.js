@@ -6,18 +6,30 @@ export default {
   type: 'document',
   title: 'Blog Post',
   icon: FiFeather,
+  groups: [
+    {
+      name: 'main',
+      title: 'Main',
+    },
+    {
+      name: 'content',
+      title: 'Content'
+    }
+  ],
   fields: [
     {
       name: 'title',
       type: 'string',
       title: 'Title',
-      description: 'Titles should be catchy, descriptive, and not too long'
+      description: 'Titles should be catchy, descriptive, and not too long',
+      group: 'main',
     },
     {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
       description: 'Some frontends will require a slug to be set to be able to show the post',
+      group: 'main',
       options: {
         source: 'title',
         maxLength: 96
@@ -28,6 +40,7 @@ export default {
       type: 'date',
       title: 'Published Date',
       description: 'This can be used to schedule post for publishing',
+      group: 'main',
       options: {
         dateFormat: 'YYY-MM-DD',
         calendarTodayLabel: 'today'
@@ -36,12 +49,28 @@ export default {
     {
       name: 'mainImage',
       type: 'mainImage',
-      title: 'Main image'
+      title: 'Main image',
+      group: 'main',
+    },
+    {
+      name: 'categories',
+      type: 'array',
+      title: 'Categories',
+      group: 'content',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'category'
+          }
+        }
+      ]
     },
     {
       name: 'excerpt',
       type: 'excerptPortableText',
       title: 'Excerpt',
+      group: 'content',
       description:
         'This ends up on summary pages, on Google, when people share your post in social media.'
     },
@@ -55,23 +84,15 @@ export default {
     //     }
     //   ]
     // },
-    {
-      name: 'categories',
-      type: 'array',
-      title: 'Categories',
-      of: [
-        {
-          type: 'reference',
-          to: {
-            type: 'category'
-          }
-        }
-      ]
-    },
+  
     {
       name: 'body',
       type: 'bodyPortableText',
-      title: 'Body'
+      title: 'Body',
+      group: 'content',
+      options: {
+        spellCheck: true,
+      },
     }
   ],
   orderings: [
