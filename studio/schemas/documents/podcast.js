@@ -28,11 +28,17 @@ export default {
             group: 'main'
         },
         {
-            name: 'category',
-            type: 'reference',
-            title: 'Category',
+            title: 'Podcast Category',
+            name: 'specialCategory',
+            type: 'string',
             group: 'details',
-            to: [{type: 'podcastCategory'}]
+            options: {
+              list: [
+                {value: 'morningCommute', title: 'Morning Commute'},
+                {value: 'roadTripping', title: 'Road Tripping'},
+                {value: 'sleepAids', title: 'Sleep Aids'}
+              ]
+            },
         },
         {
             name: 'description',
@@ -67,7 +73,7 @@ export default {
       select: {
           title: 'title',
           media: 'image',
-          category: 'category.title',
+          category: 'specialCategory',
       },
       prepare(selection) {
         const {title, media, category} = selection
