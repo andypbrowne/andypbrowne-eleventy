@@ -11,8 +11,6 @@ import post from './documents/post'
 import podcast from './documents/podcast'
 import book from './documents/book'
 import siteSettings from './documents/siteSettings'
-import podcastCategory from './documents/podcastCategory'
-import bookCategory from './documents/bookCategory'
 
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
@@ -42,8 +40,6 @@ export default createSchema({
     bodyPortableText,
     bioPortableText,
     excerptPortableText,
-    podcastCategory,
-    bookCategory,
     link
 
     // When added to this list, object types can be used as

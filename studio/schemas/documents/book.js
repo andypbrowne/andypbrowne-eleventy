@@ -59,7 +59,7 @@ export default {
             of: [
                 {
                     type: 'reference',
-                    to: [{type: 'bookCategory'}]
+                    to: [{type: 'category'}]
                 }
             ]
         },
