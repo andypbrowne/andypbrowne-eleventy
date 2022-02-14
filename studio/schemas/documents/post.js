@@ -117,9 +117,6 @@ export default {
       type: 'bodyPortableText',
       title: 'Body or process',
       group: 'content',
-      options: {
-        spellCheck: true,
-      },
     },
     {
       title: 'Results',

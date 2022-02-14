@@ -5,6 +5,9 @@ export default {
   of: [
     {
       type: 'block',
+      options: {
+        spellCheck: true
+      },
       title: 'Block',
       // Styles let you set what your user can mark up blocks with. These
       // corrensponds with HTML tags, but you can set any title or value
@@ -47,7 +50,7 @@ export default {
     // as a block type.
     {
       type: 'mainImage',
-      options: {hotspot: true}
+      options: {hotspot: true},
     }
   ]
 }

@@ -6,6 +6,9 @@ export default {
     {
       type: 'block',
       title: 'Block',
+      options: {
+        spellCheck: true
+      },
       styles: [{title: 'Normal', value: 'normal'}],
       lists: [],
       marks: {
